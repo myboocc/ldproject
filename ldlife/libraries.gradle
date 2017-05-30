@@ -1,0 +1,113 @@
+ext {
+    versions = [
+            jacoco                      : '0.7.5',
+            aspectj                     : '1.7.2',
+            groovy                      : '2.2.1',
+            jetty                       : '8.1.10.v20130312',
+            jstl                        : '1.2',
+            poi                         : '3.9',
+            slf4j                       : '1.7.7',
+           fare_dataStorage             : '0.0.1.SNAPSHOT',
+           spring                	   : '4.3.1.RELEASE',
+
+    ]
+  libraries = [
+ 
+     // dom4j
+    dom4j                                         : 'dom4j:dom4j:1.6.1',
+
+    // fastjson
+    fastjson                                      : 'com.alibaba:fastjson:1.1.29',
+
+    /* G */
+    // groovy
+    groovy                                        : "org.codehaus.groovy:groovy:${versions.groovy}",
+    groovy_all                                    : "org.codehaus.groovy:groovy-all:${versions.groovy}",
+    groovy_console                                : "org.codehaus.groovy:groovy-console:${versions.groovy}",
+    groovy_jsr223                                 : "org.codehaus.groovy:groovy-jsr223:${versions.groovy}",
+    groovy_test                                   : "org.codehaus.groovy:groovy-test:${versions.groovy}",
+
+    // gson
+    gson                                          : 'com.google.code.gson:gson:2.3',
+
+    // httpcomponents
+    httpclient                                    : "org.apache.httpcomponents:httpclient:${versions.httpcomponents}",
+    httpmime                                      : "org.apache.httpcomponents:httpmime:${versions.httpcomponents}",
+
+    // jacob
+    jacob                                         : 'net.sf.jacob-project:jacob:1.17',
+
+    javaee_api                                    : 'javax:javaee-api:6.0',
+    // junit
+    junit                                         : 'junit:junit:4.11',
+    jackson_core                                  : 'org.codehaus.jackson:jackson-core-asl:1.9.12',
+    jackson_mapper_asl                            : 'org.codehaus.jackson:jackson-mapper-asl:1.9.12',
+    
+    
+	/*L*/
+    log4j 									      :'log4j:log4j:1.2.17',
+    log4j_over_slf4j                              : "org.slf4j:log4j-over-slf4j:${versions.slf4j}",
+    logback                                       : 'ch.qos.logback:logback-classic:1.1.2',
+    logback_ext                                   : 'org.logback-extensions:logback-ext-spring:0.1.2',
+                                            
+    /*S*/
+    slf4j_api                                     : "org.slf4j:slf4j-api:${versions.slf4j}",
+    slf4j_nop                                     : "org.slf4j:slf4j-nop:${versions.slf4j}",
+    slf4j_log                                     : "org.slf4j:slf4j-log4j12:${versions.slf4j}",
+    jcl_over_slf4j                                : "org.slf4j:jcl-over-slf4j:${versions.slf4j}",
+
+	 
+    slf4j_api                                     : "org.slf4j:slf4j-api:1.7.25",
+    logback_classic                               : 'ch.qos.logback:logback-classic:1.2.3',
+	logback_core								  : 'ch.qos.logback:logback-core:1.2.3',
+
+    /* T */
+    // thrift
+    thrift                                        : 'org.apache.thrift:libthrift:0.9.0',
+    
+     /*H*/
+    //httpclient
+    httpcore                          			 :'org.apache.httpcomponents:httpcomponents-core:4.3.1',
+    httpclient									 :'org.apache.httpcomponents:httpclient:4.3.2',
+
+    /* Z */
+    // zookeeper
+    zookeeper                                     : 'org.apache.zookeeper:zookeeper:3.4.6',
+    zkclient                                      : 'com.github.adyliu:zkclient:2.1.1',
+   
+
+	commons_lang3								  :	"org.apache.commons:commons-lang3:3.4",
+	commons_codec				  	              : "commons-codec:commons-codec:1.4",
+    jedis						                  : "redis.clients:jedis:2.9.0",
+    spring_data_redis						      : "org.springframework.data:spring-data-redis:1.7.5.RELEASE",
+    mongo_java_driver						      : "org.mongodb:mongo-java-driver:3.2.2",
+	spring_data_mongodb					          : "org.springframework.data:spring-data-mongodb:1.9.6.RELEASE",
+
+
+
+   //spring
+	 spring_agent:           'org.springframework:spring-agent:2.5.6',
+	 spring_aop:             "org.springframework:spring-aop:${versions.spring}",
+	 spring_aspects:         "org.springframework:spring-aspects:${versions.spring}",
+	 spring_context:         "org.springframework:spring-context:${versions.spring}",
+	 spring_context_support: "org.springframework:spring-context-support:${versions.spring}",
+	 spring_expression:      "org.springframework:spring-expression:${versions.spring}",
+	 spring_instrument:      "org.springframework:spring-instrument:${versions.spring}",
+	 spring_jdbc:            "org.springframework:spring-jdbc:${versions.spring}",
+     spring_orm:             "org.springframework:spring-orm:${versions.spring}",
+     spring_test:            "org.springframework:spring-test:${versions.spring}",
+	 spring_tx:              "org.springframework:spring-tx:${versions.spring}",
+	 spring_web:             "org.springframework:spring-web:${versions.spring}",
+	 spring_webmvc:          "org.springframework:spring-webmvc:${versions.spring}",
+	 spring_beans:       	"org.springframework:spring-beans:${versions.spring}",
+     spring_core:        	"org.springframework:spring-core:${versions.spring}",
+             
+             
+     //jackson
+             
+     jackson_databind:       		'com.fasterxml.jackson.core:jackson-databind:2.7.4',
+     jackson_core:     				'com.fasterxml.jackson.core:jackson-core:2.7.4',
+     jackson_annotations:     		'com.fasterxml.jackson.core:jackson-annotations:2.7.4',
+    		 
+    ]
+}

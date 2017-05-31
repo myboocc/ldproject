@@ -10,6 +10,9 @@
 #maven ignore
 target/
 
+#gradle ignore
+.gradle/
+
 #eclipse ignore
 .settings/
 .project

@@ -72,6 +72,7 @@ public class CartController {
         return iCartService.selectOrUnSelect(user.getId(),null,Const.Cart.CHECKED);
     }
 
+    //全反选
     @RequestMapping("/unSelectAll")
     @ResponseBody
     public ServiceResponse<CartVo> unSelectAll(HttpSession session){
@@ -83,7 +84,7 @@ public class CartController {
     }
 
 
-
+    //单独选
     @RequestMapping("/select")
     @ResponseBody
     public ServiceResponse<CartVo> select(HttpSession session,String productId){
@@ -94,6 +95,7 @@ public class CartController {
         return iCartService.selectOrUnSelect(user.getId(),productId,Const.Cart.CHECKED);
     }
 
+    //单独反选
     @RequestMapping("/unSelect")
     @ResponseBody
     public ServiceResponse<CartVo> unSelect(HttpSession session,String productId){
@@ -115,17 +117,6 @@ public class CartController {
         }
         return iCartService.getCartProductCount(user.getId());
     }
-
-
-
-
-    
-    //全反选
-
-    //单独选
-    //单独反选
-
-    
 
 
 

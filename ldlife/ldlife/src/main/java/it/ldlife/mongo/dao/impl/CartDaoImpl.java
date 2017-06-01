@@ -3,6 +3,8 @@ package it.ldlife.mongo.dao.impl;
 import java.util.List;
 
 import org.joda.time.DateTime;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import it.ldlife.base.MongoBaseDaoImpl;
 import it.ldlife.mongo.dao.CartDao;
 import it.ldlife.pojo.Cart;
+import it.ldlife.pojo.Order;
 
 @Repository("cartDaoImpl")
 public class CartDaoImpl extends MongoBaseDaoImpl<Cart> implements CartDao{
@@ -65,8 +68,13 @@ public class CartDaoImpl extends MongoBaseDaoImpl<Cart> implements CartDao{
 
 	@Override
 	public Integer selectCartProductCount(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		Aggregation agg = Aggregation.newAggregation(
+				Aggregation.match(Criteria.where("userId").is(userId)),
+				Aggregation.group("userId").sum("quantity").as("total"));
+		AggregationResults<Cart> out = this.mongoTemplate.aggregate(agg, "cart", Cart.class);
+		Cart cart = out.getUniqueMappedResult();
+		System.out.println(cart);
+		return cart.getQuantity();
 	}
 
 }

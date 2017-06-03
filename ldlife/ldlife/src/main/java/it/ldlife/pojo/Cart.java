@@ -14,6 +14,7 @@ public class Cart {
     @Indexed
     private String userId;
 
+    @Indexed
     private String productId;
 
     private Integer quantity;

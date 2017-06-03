@@ -3,16 +3,31 @@ package it.ldlife.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Order {
-    private Integer id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+import org.springframework.data.mongodb.core.index.CompoundIndexes;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection="order")
+@CompoundIndexes({    
+    @CompoundIndex(name = "userIdOrderNo_idx", def = "{'orderNo': 1, 'userId': 1}")    
+})
+public class Order {
+	
+	@Id
+    private String id;
+
+	@Indexed(unique = true)
     private Long orderNo;
 
-    private Integer userId;
+	@Indexed
+    private String userId;
 
-    private Integer shippingId;
+	@Indexed
+    private String shippingId;
 
-    private BigDecimal payment;
+    private Double payment;
 
     private Integer paymentType;
 
@@ -32,7 +47,7 @@ public class Order {
 
     private Date updateTime;
 
-    public Order(Integer id, Long orderNo, Integer userId, Integer shippingId, BigDecimal payment, Integer paymentType, Integer postage, Integer status, Date paymentTime, Date sendTime, Date endTime, Date closeTime, Date createTime, Date updateTime) {
+    public Order(String id, Long orderNo, String userId, String shippingId, Double payment, Integer paymentType, Integer postage, Integer status, Date paymentTime, Date sendTime, Date endTime, Date closeTime, Date createTime, Date updateTime) {
         this.id = id;
         this.orderNo = orderNo;
         this.userId = userId;
@@ -53,11 +68,11 @@ public class Order {
         super();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -69,27 +84,27 @@ public class Order {
         this.orderNo = orderNo;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public Integer getShippingId() {
+    public String getShippingId() {
         return shippingId;
     }
 
-    public void setShippingId(Integer shippingId) {
+    public void setShippingId(String shippingId) {
         this.shippingId = shippingId;
     }
 
-    public BigDecimal getPayment() {
+    public Double getPayment() {
         return payment;
     }
 
-    public void setPayment(BigDecimal payment) {
+    public void setPayment(Double payment) {
         this.payment = payment;
     }
 

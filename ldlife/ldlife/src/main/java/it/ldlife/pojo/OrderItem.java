@@ -3,30 +3,39 @@ package it.ldlife.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="orderItem")
 public class OrderItem {
-    private Integer id;
+	@Id
+    private String id;
 
-    private Integer userId;
+	@Indexed
+    private String userId;
 
+	@Indexed
     private Long orderNo;
 
-    private Integer productId;
+	@Indexed
+    private String productId;
 
     private String productName;
 
     private String productImage;
 
-    private BigDecimal currentUnitPrice;
+    private Double currentUnitPrice;
 
     private Integer quantity;
 
-    private BigDecimal totalPrice;
+    private Double totalPrice;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public OrderItem(Integer id, Integer userId, Long orderNo, Integer productId, String productName, String productImage, BigDecimal currentUnitPrice, Integer quantity, BigDecimal totalPrice, Date createTime, Date updateTime) {
+    public OrderItem(String id, String userId, Long orderNo, String productId, String productName, String productImage, Double currentUnitPrice, Integer quantity, Double totalPrice, Date createTime, Date updateTime) {
         this.id = id;
         this.userId = userId;
         this.orderNo = orderNo;
@@ -44,19 +53,19 @@ public class OrderItem {
         super();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -68,11 +77,11 @@ public class OrderItem {
         this.orderNo = orderNo;
     }
 
-    public Integer getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Integer productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
@@ -92,11 +101,11 @@ public class OrderItem {
         this.productImage = productImage == null ? null : productImage.trim();
     }
 
-    public BigDecimal getCurrentUnitPrice() {
+    public Double getCurrentUnitPrice() {
         return currentUnitPrice;
     }
 
-    public void setCurrentUnitPrice(BigDecimal currentUnitPrice) {
+    public void setCurrentUnitPrice(Double currentUnitPrice) {
         this.currentUnitPrice = currentUnitPrice;
     }
 
@@ -108,11 +117,11 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    public BigDecimal getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

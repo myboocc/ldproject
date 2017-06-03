@@ -19,4 +19,8 @@ public interface CartDao extends MongoBaseDao<Cart>{
 
 	Integer selectCartProductCount(String userId);
 
+	List<Cart> selectCheckedCartByUserId(String userId);
+
+	void deleteByPrimaryKey(String id);
+
 }

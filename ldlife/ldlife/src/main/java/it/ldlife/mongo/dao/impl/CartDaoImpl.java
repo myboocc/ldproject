@@ -77,4 +77,17 @@ public class CartDaoImpl extends MongoBaseDaoImpl<Cart> implements CartDao{
 		return cart.getQuantity();
 	}
 
+	@Override
+	public List<Cart> selectCheckedCartByUserId(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteByPrimaryKey(String id) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("_id").is(id));
+		this.mongoTemplate.remove(query, this.getEntityClass());
+	}
+
 }

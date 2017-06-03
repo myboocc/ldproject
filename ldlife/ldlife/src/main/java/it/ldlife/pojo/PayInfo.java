@@ -2,11 +2,20 @@ package it.ldlife.pojo;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="payInfo")
 public class PayInfo {
-    private Integer id;
+	
+	@Id
+    private String id;
 
-    private Integer userId;
+	@Indexed
+    private String userId;
 
+    @Indexed
     private Long orderNo;
 
     private Integer payPlatform;
@@ -19,7 +28,7 @@ public class PayInfo {
 
     private Date updateTime;
 
-    public PayInfo(Integer id, Integer userId, Long orderNo, Integer payPlatform, String platformNumber, String platformStatus, Date createTime, Date updateTime) {
+    public PayInfo(String id, String userId, Long orderNo, Integer payPlatform, String platformNumber, String platformStatus, Date createTime, Date updateTime) {
         this.id = id;
         this.userId = userId;
         this.orderNo = orderNo;
@@ -34,19 +43,19 @@ public class PayInfo {
         super();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
